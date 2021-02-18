@@ -1,0 +1,15 @@
+Write a program in the C language that open the file "in.txt" and prints the sum of the numbers that are
+found on each line of the file "in.txt". To open the file use fopen API. Write your own function that
+converts a string to a number (similar cu atoi API). To print something on the screen, use the printf
+API.
+
+Extra task: Make the program work also for negative numbers.
+
+Example: let's consider the following "ini.txt" file:
+123
+198698
+5009
+983279
+
+The program will print on the screen:
+1187109
