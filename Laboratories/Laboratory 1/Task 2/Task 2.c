@@ -4,15 +4,28 @@
 #include <string.h>
 
 
-unsigned int stringToNumber (char string[])
+int stringToNumber (char string[])
 {
-	unsigned int number = 0;
+	int number = 0;
 
-	for (unsigned int index = 0; string[index] != '\n'; index++)
+	unsigned short int negative = 0;
+
+	if (string[0] == '-')
+		negative = 1;
+	else
+	{
+		unsigned short int digit = string[0] - '0';
+		number = number * 10 + digit;
+	}
+
+	for (unsigned int index = 1; index < strlen(string); index++)
 	{
 		unsigned short int digit = string[index] - '0';
 		number = number * 10 + digit;
 	}
+
+	if (negative)
+		number -= 2 * number;
 
 	return number;
 }
@@ -23,16 +36,19 @@ int main ()
 	FILE* inputFile = fopen("in.txt", "r");
 
 	unsigned int number = 0;
-	unsigned long long int sum = 0;
+	long long int sum = 0;
 
 	char word[100];
+
 	while (fgets(word, 100, inputFile))
 	{
-		unsigned int number = stringToNumber(word);
+		if (word[strlen(word) - 1] == '\n')
+			word[strlen(word) - 1] = '\0';
+		int number = stringToNumber(word);
 		sum += number;
 	}
 
-	printf("%llu", sum);
+	printf("%lld\n", sum);
 
 	return 0;
 }
