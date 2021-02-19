@@ -1,7 +1,6 @@
 Lets consider the following code:
 
 	#include <iostream>
-
 	using namespace std;
 
 
