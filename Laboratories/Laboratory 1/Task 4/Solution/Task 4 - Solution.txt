@@ -1,11 +1,9 @@
-Task 4 - Solution:
-
-	The missing code is:
-		- 1:
-			2
-		- 2:
-			tr
-		- 3:
-			false
-		- 4:
-			n
+The missing code is:
+	- First spot:
+		2
+	- Second spot:
+		tr
+	- Third spot:
+		false
+	- Fourth spot:
+		n
