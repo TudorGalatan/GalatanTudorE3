@@ -1,0 +1,15 @@
+Read a sentence from the input using scanf API. Then sort split it into words and write
+to the screen (using the printf API) the words sorted (from the longest one to the
+shortest one). If two words have the same length, they will be sorted out alphabetically.
+We consider that each word is separated from another one using space (one or multiple).
+
+Example: let's consider the following sentence:
+I went to the library yesterday
+
+The program will print the following on the screen:
+yesterday
+library
+went
+the
+to
+I
