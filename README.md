@@ -1,5 +1,3 @@
-# Object-Oriented Programming
-
 ![Thumbnail](Thumbnail.png)
 
 
