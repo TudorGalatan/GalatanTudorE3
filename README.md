@@ -18,3 +18,4 @@ The repository consists of all the laboratory work, as well as the laboratory ex
 ## Laboratories:
 
 - Laboratory 1
+- Laboratory 2
