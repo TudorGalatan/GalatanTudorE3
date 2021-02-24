@@ -2,7 +2,7 @@
 	This is the starting point of the application.
 */
 
-#include "Student.h"
+#include "Student Comparator.h"
 
 
 int main ()
