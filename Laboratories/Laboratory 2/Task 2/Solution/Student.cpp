@@ -68,7 +68,7 @@ void Student::setHistoryGrade (float historyGrade)
 float Student::getAverageGrade ()
 {
 	// Calculate the average grade of the student.
-	float averageGrade = (this->mathematicsGrade + this->englishGrade + this->historyGrade);
+	float averageGrade = this->mathematicsGrade + this->englishGrade + this->historyGrade;
 	averageGrade /= 3.0;
 
 	return averageGrade;
