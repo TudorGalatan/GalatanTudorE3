@@ -1,5 +1,5 @@
 /*
-	This is the interface for the Number List data structure.
+	This is the interface for the NumberList data structure.
 */
 
 #pragma once
@@ -28,20 +28,20 @@ class NumberList
         /*
             Adds a new number to the list of numbers.
             Input:
-                - "newNumber": the new number to be added to the list
+                - "newNumber": the new number to be added to the list of numbers
             Output:
-                - true, if the number was successfully added to the list
+                - true, if the number was successfully added to the list of numbers
                 - false, otherwise
         */
         bool addNumber (int newNumber);
 
         /*
-            It sorts all the numbers in ascending order using the Bubble
-            Sort algorithm.
+            It sorts all the numbers in the list of numbers in ascending order using
+            the Bubble Sort algorithm.
             Input:
                 - none
             Output:
-                - the array of numbers is being sorted
+                - the list of numbers is being sorted
         */
         void sort ();
 

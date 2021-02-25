@@ -6,7 +6,7 @@
 
 
 /*
-	Runs a basic example for the defined data structure.
+	Runs a basic example of using the NumberList data structure.
 	Input:
 		- none
 	Output:
@@ -17,7 +17,7 @@ void runExample ();
 
 int main ()
 {
-	// Run the example for the defined data structure.
+	// Run the basic example of using the NumberList data structure.
 	runExample();
 
 	return 0;
@@ -35,7 +35,7 @@ void runExample ()
 	// Print the initial list of numbers.
 	numberList.printList();
 
-	// Add some numbers.
+	// Add some numbers to the list of numbers.
 	numberList.addNumber(-67);
 	numberList.addNumber(-123);
 	numberList.addNumber(-123);
