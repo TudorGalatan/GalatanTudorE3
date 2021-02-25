@@ -50,4 +50,16 @@ void runExample ()
 
 	// Print the sorted list of numbers.
 	numberList.printList();
+
+	// Insert a new number on a given position in the list of numbers.
+	numberList.insertNumberOnPosition(0, 5);
+
+	// Print the updated list of numbers.
+	numberList.printList();
+
+	// Remove a number from the list of numbers.
+	numberList.removeNumber(-123);
+
+	// Print the updated list of numbers.
+	numberList.printList();
 }

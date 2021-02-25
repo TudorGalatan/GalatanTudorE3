@@ -29,6 +29,42 @@ bool NumberList::addNumber (int newNumber)
 }
 
 
+bool NumberList::insertNumberOnPosition (unsigned short int position, int newNumber)
+{
+	// There is enough space in the list of numbers to add a new
+	// number, so we add the given number to the list.
+	if (this->numberOfNumbers + 1 <= 10)
+	{
+		for (short int index = this->numberOfNumbers; index >= position + 1; index--)
+			this->numbers[index] = this->numbers[index - 1];
+
+		this->numbers[position] = newNumber;
+
+		this->numberOfNumbers++;
+
+		return true;
+	}
+
+	// The list of numbers is at its full capacity, so we can't
+	// insert the new number into it.
+	return false;
+}
+
+
+void NumberList::removeNumber (int number)
+{
+	for (unsigned short int index = 0; index < this->numberOfNumbers; )
+		if (this->numbers[index] == number)
+		{
+			for (unsigned short int newIndex = index; newIndex < this->numberOfNumbers - 1; newIndex++)
+				this->numbers[newIndex] = this->numbers[newIndex + 1];
+			this->numberOfNumbers--;
+		}
+		else
+			index++;
+}
+
+
 void NumberList::sort ()
 {
 	bool isSorted = false;

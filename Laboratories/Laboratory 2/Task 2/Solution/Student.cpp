@@ -7,10 +7,10 @@
 
 Student::Student ()
 {
-	// Set the name of the student to an empty string.
+	// Set the name of the student to the empty string.
 	this->name = "";
 
-	// Set the grades of the student.
+	// Set the default grades of the student.
 	this->mathematicsGrade = 0.0;
 	this->englishGrade = 0.0;
 	this->historyGrade = 0.0;
