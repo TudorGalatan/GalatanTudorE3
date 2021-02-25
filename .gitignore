@@ -1,3 +1,4 @@
+# File extensions to exclude.
 *.suo
 *.db
 *.db-shm
