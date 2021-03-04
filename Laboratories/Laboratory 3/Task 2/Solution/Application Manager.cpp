@@ -26,13 +26,19 @@ void runExample ()
 
 	// Print the empty canvas.
 	canvas.print();
-
+	
 	// Set some points on the canvas.
 	canvas.setPoint(2, 4, 'G');
 	canvas.setPoint(3, 7, 'A');
 	canvas.setPoint(1, 1, 'B');
 	canvas.setPoint(4, 0, 'B');
 	canvas.setPoint(1, 2, 'C');
+
+	// Print the canvas.
+	canvas.print();
+
+	// Draw a line on the canvas.
+	canvas.drawLine(7, 8, 17, 5, 'L');
 
 	// Print the canvas.
 	canvas.print();
@@ -52,11 +58,14 @@ void runExample ()
 	// Clear the canvas.
 	canvas.clear();
 
-	// Print the empty canvas.
-	canvas.print();
-
 	// Draw a circle on the canvas.
 	canvas.drawCircle(7, 7, 5, 'O');
+
+	// Print the canvas.
+	canvas.print();
+
+	// Draw a full circle on the canvas.
+	canvas.fillCircle(7, 7, 4, 'Q');
 
 	// Print the canvas.
 	canvas.print();
