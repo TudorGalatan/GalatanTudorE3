@@ -11,8 +11,11 @@ class Canvas
 {
     private:
 
+        // The size of the canvas
         unsigned short int width, height;
-        char canvas[10000][10000];
+
+        // The canvas
+        char canvas[100][100];
 
     public:
 
@@ -22,7 +25,7 @@ class Canvas
                 - "width": the width of the canvas
                 - "height": the height of the canvas
             Output:
-                - the canvas is being initialized
+                - the canvas is being created
         */
         Canvas (unsigned short int width, unsigned short int height);
 
@@ -31,9 +34,9 @@ class Canvas
             Input:
                 - none
             Output:
-                - the canvas is being cleaned up
+                - the canvas is being cleaned
         */
-        void clear();
+        void clear ();
 
         /*
             Prints the canvas on the screen.
@@ -42,10 +45,34 @@ class Canvas
             Output:
                 - the canvas is being printed on the screen
         */
-        void print();
+        void print ();
 
         /*
-            Draws a rectangle on the canvas.
+            Sets a point on the canvas.
+            Input:
+                - "horizontalCoordinate": the horizontal coordinate of the point
+                - "verticalCoordinate": the vertical coordinate of the point
+                - "character": the character to be displayed on the canvas
+            Output:
+                - the point is being set on the canvas
+        */
+        void setPoint (unsigned short int horizontalCoordinate, unsigned short int verticalCoordinate, char character);
+
+        /*
+            Draws a line on the canvas using the Bresenham's line algorithm.
+            Input:
+                - "x1": the horizontal coordinate of one point on the line
+                - "y1": the vertical coordinate of one point on the line
+                - "x2": the horizontal coordinate of another point on the line
+                - "y2": the vertical coordinate of another point on the line
+                - "character": the character to be displayed on the canvas
+            Output:
+                - the line is being drawn on the canvas
+        */
+        void drawLine (unsigned short int x1, unsigned short int y1, unsigned short int x2, unsigned short int y2, char character);
+
+        /*
+            Draws an empty rectangle on the canvas.
             Input:
                 - "left": the left side of the rectangle
                 - "top": the top side of the rectangle
@@ -53,12 +80,12 @@ class Canvas
                 - "bottom": the bottom side of the rectangle
                 - "character": the character to be displayed on the canvas
             Output:
-                - a rectangle is being drawn on the canvas
+                - the empty rectangle is being drawn on the canvas
         */
         void drawRectangle (unsigned short int left, unsigned short int top, unsigned short int right, unsigned short int bottom, char character);
 
         /*
-            Fills a rectangle on the canvas.
+            Draws a full rectangle on the canvas.
             Input:
                 - "left": the left side of the rectangle
                 - "top": the top side of the rectangle
@@ -66,12 +93,12 @@ class Canvas
                 - "bottom": the bottom side of the rectangle
                 - "character": the character to be displayed on the canvas
             Output:
-                - a rectangle is being drawn on the canvas
+                - the full rectangle is being drawn on the canvas
         */
         void fillRectangle (unsigned short int left, unsigned short int top, unsigned short int right, unsigned short int bottom, char character);
 
         /*
-            Draws a circle on the canvas.
+            Draws a circle on the canvas using the midpoint circle algorithm.
             Input:
                 - "horizontalCoordinate": the horizontal coordinate of the center of the circle
                 - "verticalCoordinate": the vertical coordinate of the center of the circle
@@ -82,7 +109,15 @@ class Canvas
         */
         void drawCircle (unsigned short int horizontalCoordinate, unsigned short int verticalCoordinate, unsigned short int radius, char character);
 
-        void FillCircle(int x, int y, int ray, char ch);
-        void SetPoint(int x, int y, char ch);
-        void DrawLine(int x1, int y1, int x2, int y2, char ch);
+        /*
+            Fills a circle on the canvas using the midpoint circle algorithm.
+            Input:
+                - "horizontalCoordinate": the horizontal coordinate of the center of the circle
+                - "verticalCoordinate": the vertical coordinate of the center of the circle
+                - "radius": the radius of the circle
+                - "character": the character to be displayed on the canvas
+            Output:
+                - a disc is being drawn on the canvas
+        */
+        void fillCircle (unsigned short int horizontalCoordinate, unsigned short int verticalCoordinate, unsigned short int radius, char character);
 };

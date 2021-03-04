@@ -7,9 +7,19 @@
 
 Canvas::Canvas (unsigned short int width, unsigned short int height)
 {
-	this->width = width;
-	this->height = height;
+	// Set the width of the canvas.
+	if (width <= 100)
+		this->width = width;
+	else
+		this->width = 100;
 
+	// Set the height of the canvas.
+	if (height <= 100)
+		this->height = height;
+	else
+		this->height = 100;
+
+	// Initialize the canvas.
 	for (unsigned short int line = 0; line < height; line++)
 		for (unsigned short int column = 0; column < width; column++)
 			this->canvas[line][column] = ' ';
@@ -27,8 +37,23 @@ void Canvas::clear ()
 void Canvas::print ()
 {
 	for (unsigned short int line = 0; line < this->height; line++)
+	{
 		for (unsigned short int column = 0; column < this->width; column++)
 			std::cout << this->canvas[line][column];
+		std::cout << '\n';
+	}
+}
+
+
+void Canvas::setPoint (unsigned short int horizontalCoordinate, unsigned short int verticalCoordinate, char character)
+{
+	this->canvas[verticalCoordinate][horizontalCoordinate] = character;
+}
+
+
+void Canvas::drawLine (unsigned short int x1, unsigned short int y1, unsigned short int x2, unsigned short int y2, char character)
+{
+
 }
 
 
@@ -52,11 +77,11 @@ void Canvas::fillRectangle (unsigned short int left, unsigned short int top, uns
 
 void Canvas::drawCircle (unsigned short int horizontalCoordinate, unsigned short int verticalCoordinate, unsigned short int radius, char character)
 {
-	for (unsigned short int line = 0; line < this->height; line++)
-		for (unsigned short int column = 0; column < this->width; column++)
-			if (line == (short int)verticalCoordinate + radius or
-				line == (short int)verticalCoordinate - radius and
-				column == (short int)horizontalCoordinate + radius or
-				column == (short int)horizontalCoordinate - radius)
-				this->canvas[line][column] = character;
+
+}
+
+
+void Canvas::fillCircle (unsigned short int horizontalCoordinate, unsigned short int verticalCoordinate, unsigned short int radius, char character)
+{
+
 }
