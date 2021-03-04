@@ -7,6 +7,7 @@
 
 #include <stdarg.h>
 #include <string.h>
+#include <iostream>
 
 
 class Mathematics

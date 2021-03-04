@@ -56,14 +56,6 @@ void runExample ()
 	int fifthCorrectResult = 456228319;
 	assert(fifthResult == fifthCorrectResult);
 
-	/*
-	// Test the sixth form of the function "add".
-	char* sixthResult = mathematics.add(firstString, secondString);
-	const char* sixthCorrectResult = "Ana has apples.";
-	short int compare = strcmp(sixthResult, sixthCorrectResult);
-	assert(compare == 0);
-	*/
-
 	// Test the first form of the function "multiply".
 	int seventhResult = mathematics.multiply(firstInteger, secondInteger);
 	int seventhCorrectResult = -20979;
@@ -85,4 +77,6 @@ void runExample ()
 	double tenthCorrectResult = 12566.7997194;
 	if (tenthResult != tenthCorrectResult)
 		std::cout << "The result is not correct.\n";
+
+	std::cout << '\n' << mathematics.add("11111", "1234567") << '\n';
 }
