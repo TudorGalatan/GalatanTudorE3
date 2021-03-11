@@ -5,6 +5,10 @@
 #pragma once
 
 #include <iostream>
+#include <cstdlib>
+#include <cstdarg>
+#include <string>
+#include <sstream>
 
 
 class Sort
@@ -12,7 +16,7 @@ class Sort
     private:
 
         unsigned int numberOfElements;
-        int elements[10000];
+        int elements[1000];
 
     public:
 
@@ -25,6 +29,46 @@ class Sort
                 - the class instance is being initialized
         */
         Sort ();
+
+        /*
+            This is the default constructor. It initializes the list of
+            numbers. In this case the list contains zero elements.
+            Input:
+                - none
+            Output:
+                - the class instance is being initialized
+        */
+        Sort (unsigned short int numberOfElements, int minimumValue, int maximumValue);
+
+        /*
+            This is the default constructor. It initializes the list of
+            numbers. In this case the list contains zero elements.
+            Input:
+                - none
+            Output:
+                - the class instance is being initialized
+        */
+        Sort (unsigned short int numberOfElements, int elements[]);
+
+        /*
+            This is the default constructor. It initializes the list of
+            numbers. In this case the list contains zero elements.
+            Input:
+                - none
+            Output:
+                - the class instance is being initialized
+        */
+        Sort (unsigned short int numberOfElements, ...);
+
+        /*
+            This is the default constructor. It initializes the list of
+            numbers. In this case the list contains zero elements.
+            Input:
+                - none
+            Output:
+                - the class instance is being initialized
+        */
+        Sort (std::string string);
 
         /*
             It prints the list of numbers on the screen.
@@ -42,7 +86,7 @@ class Sort
             Output:
                 - the number of elements in the list of numbers
         */
-        unsigned short int getNumberOfElements ();
+        const unsigned short int& getNumberOfElements () const;
 
         /*
             Gets the element in the list of numbers situated on the given position.
@@ -85,6 +129,8 @@ class Sort
                 - the list of numbers is being sorted in the given order
         */
         void quicksort (bool ascendingOrder = true);
+
+        void mergeLists (Sort& sortList);
 
     private:
 

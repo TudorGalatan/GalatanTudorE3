@@ -8,6 +8,56 @@
 Sort::Sort ()
 {
 	this->numberOfElements = 0;
+	
+	for (unsigned short int index = 0; index < 1000; index++)
+		this->elements[index] = 0;
+}
+
+
+Sort::Sort (unsigned short int numberOfElements, int minimumValue, int maximumValue)
+{
+	this->numberOfElements = numberOfElements;
+
+	for (unsigned short int index = 0; index < this->numberOfElements; index++)
+		this->elements[index] = minimumValue + std::rand() % (maximumValue - minimumValue + 1);
+}
+
+
+Sort::Sort (unsigned short int numberOfElements, int elements[])
+{
+	this->numberOfElements = numberOfElements;
+
+	for (unsigned short int index = 0; index < this->numberOfElements; index++)
+		this->elements[index] = elements[index];
+}
+
+
+Sort::Sort (unsigned short int numberOfElements, ...)
+{
+	this->numberOfElements = numberOfElements;
+
+	va_list elements;
+	va_start(elements, numberOfElements);
+
+	for (unsigned short int index = 0; index < this->numberOfElements; index++)
+		this->elements[index] = va_arg(elements, int);
+
+	va_end(elements);
+}
+
+
+Sort::Sort (std::string string)
+{
+	this->numberOfElements = 0;
+	std::stringstream stringStream(string);
+
+	for (int number; stringStream >> number; )
+	{
+		this->elements[this->numberOfElements++] = number;
+
+		if (stringStream.peek() == ',')
+			stringStream.ignore();
+	}
 }
 
 
@@ -34,7 +84,7 @@ void Sort::print ()
 		if (this->numberOfElements > 1)
 			std::cout << "s";
 
-		std::cout << ":\n";
+		std::cout << ":\n\t";
 	}
 
 	// Print the list of numbers.
@@ -45,7 +95,7 @@ void Sort::print ()
 }
 
 
-unsigned short int Sort::getNumberOfElements ()
+const unsigned short int& Sort::getNumberOfElements () const
 {
 	return this->numberOfElements;
 }
@@ -137,4 +187,30 @@ unsigned short int Sort::quicksortPartition (unsigned short int startIndex, unsi
 	this->elements[partitionIndex + 1] = container;
 
 	return partitionIndex;
+}
+
+
+void Sort::mergeLists (Sort& sortList)
+{
+	int firstIndex = 0, secondIndex = 0, thirdIndex = 0;
+	int thirdArray[2000] = { 0 };
+
+	while (firstIndex < this->numberOfElements && secondIndex < sortList.numberOfElements)
+	{
+		if (this->elements[firstIndex] <= sortList.elements[secondIndex])
+			thirdArray[thirdIndex++] = this->elements[firstIndex++];
+		else
+			thirdArray[thirdIndex++] = sortList.elements[secondIndex++];
+	}
+
+	while (firstIndex < this->numberOfElements)
+		thirdArray[thirdIndex++] = this->elements[firstIndex++];
+
+	while (secondIndex < sortList.numberOfElements)
+		thirdArray[thirdIndex++] = sortList.elements[secondIndex++];
+
+	this->numberOfElements += sortList.numberOfElements;
+
+	for (unsigned short int index = 0; index < this->numberOfElements; index++)
+		this->elements[index] = thirdArray[index];
 }
