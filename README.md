@@ -22,3 +22,4 @@ The repository consists of all the laboratory work, as well as the laboratory ex
 - Laboratory 3
 - Laboratory 4
 - Laboratory 5
+- Laboratory 6
