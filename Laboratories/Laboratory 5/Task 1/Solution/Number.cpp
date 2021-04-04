@@ -22,7 +22,7 @@ Number::Number (const char* digits, unsigned short int base)
 
 Number::Number (const Number& number)
 {
-	this->digits = number.digits;
+	strcpy(this->digits, number.digits);
 	*this->base = *number.base;
 }
 
@@ -44,7 +44,7 @@ Number::Number (Number&& number) noexcept
 Number::~Number ()
 {
 	// Deallocate the memory used for storing the digits of the number.
-	delete this->digits;
+	delete[] this->digits;
 	this->digits = nullptr;
 
 	// Deallocate the memory used for storing the base of the number.
@@ -52,19 +52,29 @@ Number::~Number ()
 }
 
 
-char* Number::operator + (const Number& number)
+Number operator + (const Number& firstNumber, const Number& secondNumber)
 {
-	unsigned short int resultSize = strlen(number.digits) + strlen(this->digits) + 3;
-	char* result = new char[resultSize];
+	unsigned short int resultSize = strlen(firstNumber.digits) + strlen(secondNumber.digits) + 3;
+	char* digits = new char[resultSize];
 
-	// Perform the addition of the two numbers.
-	return NULL;
+	unsigned short int base = *firstNumber.base;
+	strcpy(digits, firstNumber.digits);
+
+	Number result(digits, base);
+	return result;
 }
 
 
-char* Number::operator - (const Number& number)
+Number operator - (const Number& firstNumber, const Number& secondNumber)
 {
-	return NULL;
+	unsigned short int resultSize = strlen(firstNumber.digits) + strlen(secondNumber.digits) + 3;
+	char* digits = new char[resultSize];
+
+	unsigned short int base = *firstNumber.base;
+	strcpy(digits, firstNumber.digits);
+
+	Number result(digits, base);
+	return result;
 }
 
 

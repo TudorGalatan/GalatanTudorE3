@@ -4,6 +4,7 @@
 
 #include "Number.h"
 
+
 void runExample ();
 
 
@@ -18,5 +19,5 @@ int main ()
 
 void runExample ()
 {
-	// To add.
+	Number firstNumber("4535", 10);
 }

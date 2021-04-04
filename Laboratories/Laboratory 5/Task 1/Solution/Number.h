@@ -2,10 +2,12 @@
 	This is the interface for the Number module.
 */
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #pragma once
 
-#include <cstring>
 #include <iostream>
+#include <cstring>
 
 
 class Number
@@ -58,8 +60,10 @@ class Number
 		*/
 		~Number ();
 
-		char* operator + (const Number& number);
-		char* operator - (const Number& number);
+		friend Number operator + (const Number& firstNumber, const Number& secondNumber);
+
+		friend Number operator - (const Number& firstNumber, const Number& secondNumber);
+
 		char* operator ! ();
 		Number operator < (const Number& number);
 		Number operator <= (const Number& number);
