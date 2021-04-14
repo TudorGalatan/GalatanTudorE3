@@ -24,3 +24,8 @@ The repository consists of all the laboratory work, as well as the laboratory ex
 - Laboratory 5
 - Laboratory 6
 - Laboratory 7
+- Laboratory 8
+
+## Exams:
+
+- Laboratory Exam 1
