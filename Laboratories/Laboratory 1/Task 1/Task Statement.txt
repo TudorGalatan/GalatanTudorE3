@@ -1,0 +1,14 @@
+-Learn how to use GIT:
+	- Install: https://git-scm.com/downloads
+	- Documentation: https://git-scm.com/docs/ 
+	- Learn simple commands:
+		- commit --> https://git-scm.com/docs/git-commit 
+		- clone --> https://git-scm.com/docs/git-clone 
+		- push --> https://git-scm.com/docs/git-push 
+		- pull --> https://git-scm.com/docs/git-pull 
+		- status --> https://git-scm.com/docs/git-status 
+		- add --> https://git-scm.com/docs/git-add 
+		- log --> https://git-scm.com/docs/git-log 
+		- config --> https://git-scm.com/docs/git-config 
+	- Each student will create his/hers private GITHUB repository where his/her teaching assistant will be set as a collaborator for that repo. 
+	- All of the operations from now on (lab exams, lab homework will be done via that repo (or multiple repos)).
